@@ -80,16 +80,20 @@ public class RaisePig extends TimerTask {
 
     @Override
     public void run() {
-       double countWeight;
+        double countWeight;
         countWeight = objPig.getWeight();
         countWeight += feedPig(1);
         objPig.setWeight(countWeight);
     }
 
-   
-   public boolean sellPig(){
-       
-   }
+    public boolean sellPig() {
+        if (objPig.getWeight() >= 120) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 
     public Pig getObjPig() {
         return objPig;
